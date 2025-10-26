@@ -1,0 +1,110 @@
+/*
+  IMPORTAR FUENTE (OPCIONAL)
+  Importamos una fuente de Google Fonts (Lato) para darle un aspecto
+  más moderno y limpio que las fuentes por defecto del navegador.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/*
+  VARIABLES CSS (RAÍZ)
+  Definir variables de color aquí hace que sea muy fácil cambiar
+  la paleta de colores de todo el sitio editando solo esta sección.
+*/
+:root {
+  --color-fondo: #f8f9fa; /* Un gris muy claro, casi blanco */
+  --color-tarjeta: #ffffff; /* Blanco puro para las tarjetas */
+  --color-nav: #2c3e50; /* Un azul oscuro/grisáceo para la navegación */
+  --color-nav-texto: #ecf0f1; /* Un blanco suave para el texto de la nav */
+  --color-primario: #3498db; /* Azul primario para botones y enlaces */
+  --color-texto: #333; /* Color de texto principal */
+  --fuente-principal: 'Lato', sans-serif; /* Nuestra fuente importada */
+}
+
+/*
+  ESTILOS GENERALES DEL BODY
+*/
+body {
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+}
+
+/*
+  CLASE PERSONALIZADA PARA LA BARRA DE NAVEGACIÓN
+  Usamos la variable '--color-nav' que definimos arriba.
+*/
+.bg-custom-nav {
+  background-color: var(--color-nav) !important; /* '!important' asegura que sobrescriba a Bootstrap */
+}
+
+/*
+  ESTILOS PARA LOS ENLACES DE NAVEGACIÓN
+*/
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--color-nav-texto);
+  transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #ffffff; /* Texto más blanco al pasar el mouse o estar activo */
+  font-weight: 700;
+}
+
+/*
+  ESPACIADO PARA EL CONTENIDO PRINCIPAL
+  Esto es crucial porque usamos una 'fixed-top' navbar.
+  Añade un padding superior al 'main' para que el contenido
+  no empiece oculto detrás de la barra de navegación.
+  70px suele ser suficiente.
+*/
+.main-content {
+  padding-top: 70px;
+}
+
+/*
+  ESTILOS DE LAS TARJETAS (CARDS)
+*/
+.card {
+  /* Quitamos el borde por defecto de Bootstrap para un look más limpio */
+  border: none;
+  /* Añadimos un radio de borde más sutil */
+  border-radius: 8px;
+  /* Efecto de transición para cuando se pasa el mouse */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*
+  EFECTO HOVER (SOBRE EL MOUSE) EN LAS TARJETAS
+  - 'transform: translateY(-5px)': Eleva la tarjeta 5px.
+  - 'box-shadow': Aumenta la sombra para un efecto "lift".
+*/
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/*
+  ESTILO DEL TÍTULO DE LA TARJETA
+  Usamos el color primario para los títulos para que destaquen.
+*/
+.card-title {
+  color: var(--color-primario);
+  font-weight: 700; /* Fuente más gruesa */
+}
+
+/*
+  ESTILOS DEL BOTÓN
+  Personalizamos el botón primario de Bootstrap.
+*/
+.btn-primary {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+  font-weight: 700;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9; /* Un azul un poco más oscuro al pasar el mouse */
+  border-color: #2980b9;
+}
